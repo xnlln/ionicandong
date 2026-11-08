@@ -1,0 +1,14 @@
+ACTUAL IONIC LAB
+Double-click Start Phone Preview.cmd, then open http://localhost:8200.
+Keep the server windows open while working.
+
+Or open two terminals in lab-app:
+Terminal 1: npx ionic serve --port 8100 --no-open
+Terminal 2: npm run lab
+
+The old ionic serve --lab option was removed from Ionic CLI 7.
+This project uses the official standalone @ionic/lab tool.
+
+Edit src/app/home/home.page.html for your text.
+Edit src/app/home/home.page.scss for colors and spacing.
+Replace [Your Name] and [University Name] with your details.

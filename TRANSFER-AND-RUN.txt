@@ -1,0 +1,22 @@
+TRANSFER AND RUN (WINDOWS)
+
+1. Copy the whole "ionic laboratory" folder to the other computer.
+   You can skip node_modules, .angular, and www inside lab-app.
+
+2. Install Node.js 24 (version 24.15 or newer) from https://nodejs.org.
+
+3. Open Command Prompt in the lab-app folder.
+   Run this once and wait until it finishes:
+   npm ci
+
+4. In the same window, run:
+   npx ionic serve --port 8100 --no-open
+
+5. Open another Command Prompt in lab-app and run:
+   npm run lab
+
+6. Open your browser:
+   http://localhost:8200
+
+Keep both command windows open. Press Ctrl+C in both to stop.
+Next time, repeat steps 4-6 only.
