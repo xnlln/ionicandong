@@ -1,22 +1,76 @@
-TRANSFER AND RUN (WINDOWS)
+TRANSFER AND RUN GUIDE (WINDOWS)
 
-1. Copy the whole "ionic laboratory" folder to the other computer.
-   You can skip node_modules, .angular, and www inside lab-app.
+============================================================
+1. COPY THE FOLDER
+============================================================
+Copy the whole project folder ("ionicandong") to the other computer.
+(You can skip copying "node_modules", ".angular", and "www" inside "lab-app" to save time/space.)
 
-2. Install Node.js 24 (version 24.15 or newer) from https://nodejs.org.
+============================================================
+2. INSTALL NODE.JS
+============================================================
+Install Node.js 20 or newer (Node.js 22/24 recommended) from:
+https://nodejs.org
 
-3. Open Command Prompt in the lab-app folder.
-   Run this once and wait until it finishes:
+Verify it is installed by opening Command Prompt and typing:
+node -v
+npm -v
+
+============================================================
+3. INSTALL PROJECT DEPENDENCIES
+============================================================
+EASIEST WAY (1-Click):
+- Inside "ionicandong", double-click:
+  "Install Dependencies.cmd"
+- Wait until it says "Setup completed successfully!"
+
+MANUAL WAY (Using Command Prompt):
+* IMPORTANT: Do NOT run npm ci in the main folder!
+  package.json is located inside the "lab-app" subfolder.
+
+1. Open Command Prompt.
+2. Navigate into the lab-app folder:
+   cd path\to\ionicandong\lab-app
+   (Or open the "lab-app" folder in File Explorer, click the top address bar, type cmd, and press Enter).
+3. Run:
    npm ci
 
-4. In the same window, run:
+* If "npm ci" gives an error (e.g. dependency conflict or lockfile mismatch):
+  Run this alternative command instead:
+   npm install --legacy-peer-deps
+
+============================================================
+4. START AND PREVIEW THE APP
+============================================================
+OPTION A (EASIEST - 1-Click):
+- Inside "ionicandong", double-click:
+  "Start Phone Preview.cmd"
+- It will automatically launch the server and open the phone preview in your browser (http://localhost:8200).
+
+OPTION B (MANUAL):
+1. In Command Prompt (inside "lab-app"):
    npx ionic serve --port 8100 --no-open
 
-5. Open another Command Prompt in lab-app and run:
+2. Open a second Command Prompt (inside "lab-app") and run:
    npm run lab
 
-6. Open your browser:
+3. Open your browser and go to:
    http://localhost:8200
 
-Keep both command windows open. Press Ctrl+C in both to stop.
-Next time, repeat steps 4-6 only.
+Keep both terminal windows open while testing. Press Ctrl+C to stop.
+For future runs, you only need Step 4!
+
+============================================================
+TROUBLESHOOTING COMMON NPM CI ERRORS
+============================================================
+* Error: ENOENT: no such file or directory, open '...package.json'
+  -> Cause: You ran npm in the wrong directory (outer folder).
+  -> Fix: Type "cd lab-app" first, then re-run npm ci.
+
+* Error: EUSAGE: The `npm ci` command can only install with an existing package-lock.json...
+  -> Cause: Command Prompt is not inside "lab-app".
+  -> Fix: Navigate inside "lab-app" folder where package-lock.json exists.
+
+* Error: ERESOLVE unable to resolve dependency tree
+  -> Cause: Different Node/npm version strict peer-dependency checks.
+  -> Fix: Run: npm install --legacy-peer-deps

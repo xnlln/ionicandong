@@ -1,6 +1,8 @@
 NEUST GABALDON CAMPUS
 
-Double-click Start Phone Preview.cmd to launch the Ionic phone preview.
+First time on a new computer?
+1. Double-click "Install Dependencies.cmd" (or check TRANSFER-AND-RUN.txt).
+2. Double-click "Start Phone Preview.cmd" to launch the Ionic phone preview.
 
 Or, from lab-app, run: npm start -- --port 8100
 Open http://localhost:8100
