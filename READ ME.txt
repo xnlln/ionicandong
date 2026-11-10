@@ -1,14 +1,17 @@
-ACTUAL IONIC LAB
-Double-click Start Phone Preview.cmd, then open http://localhost:8200.
-Keep the server windows open while working.
+NEUST GABALDON CAMPUS
 
-Or open two terminals in lab-app:
-Terminal 1: npx ionic serve --port 8100 --no-open
-Terminal 2: npm run lab
+Double-click Start Phone Preview.cmd to launch the Ionic phone preview.
 
-The old ionic serve --lab option was removed from Ionic CLI 7.
-This project uses the official standalone @ionic/lab tool.
+Or, from lab-app, run: npm start -- --port 8100
+Open http://localhost:8100
 
-Edit src/app/home/home.page.html for your text.
-Edit src/app/home/home.page.scss for colors and spacing.
-Replace [Your Name] and [University Name] with your details.
+Pages: Dashboard, School Profile, Courses Offered, Faculty, Contacts, Gallery.
+The sidebar stays visible on large screens and opens from the menu button on phones.
+
+Content: src/app/campus.page.ts
+Page layout: src/app/campus.page.html
+Page styles: src/app/campus.page.scss
+Navigation: src/app/app.component.ts
+Images: src/assets/campus
+
+Announcement dates and contact information reproduce the supplied references.
